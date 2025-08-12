@@ -36,19 +36,17 @@ app.add_middleware(
 memory_db = {
     "Padi_Bookshelf": []
     }
-# for default bookshelf
 
-default_bookshelf = "Padi_Bookshelf"
 
 # get padi default bookshelf
-app.get("/bookshelf", response_model=Bookshelf)
+@app.get("/bookshelf", response_model=Bookshelf)
 def get_bookshelf():
-    return Bookshelf(books=memory_db[default_bookshelf])
+    return Bookshelf(books=memory_db["Padi_Bookshelf"])
 
 # post padi default bookshelf a book
 @app.post("/book", response_model=Book)
 def add_book(book: Book):
-    memory_db[default_bookshelf].append(book)
+    memory_db["Padi_Bookshelf"].append(book)
     return book
 
 
