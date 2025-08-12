@@ -6,14 +6,14 @@ from typing import List
 
 class Book(BaseModel):
     isbn: str
-    language: str
+    lang: str
     title: str
     author: str
     category: str
     year: int
     ordinalVolume: int
     isRead: bool
-    star: int
+    star: float
 
 class Bookshelf(BaseModel):
     books: List[Book]
