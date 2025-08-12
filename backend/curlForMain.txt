@@ -1,0 +1,17 @@
+curl -X GET --location "http://localhost:8000/bookshelf"
+
+###
+
+curl -X POST --location "http://localhost:8000/book" \
+    -H "Content-Type: application/json" \
+    -d '{
+            "isbn": "9780743273565",
+            "lang": "en-US",
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "category": "Fiction",
+            "year": 1925,
+            "ordinalVolume": 1,
+            "isRead": false,
+            "star": 4.8
+        }'
