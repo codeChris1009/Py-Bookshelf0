@@ -44,3 +44,13 @@ default_bookshelf = "Padi_Bookshelf"
 app.get("/bookshelf", response_model=Bookshelf)
 def get_bookshelf():
     return Bookshelf(books=memory_db[default_bookshelf])
+
+# post padi default bookshelf a book
+@app.post("/book", response_model=Book)
+def add_book(book: Book):
+    memory_db[default_bookshelf].append(book)
+    return book
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
