@@ -31,3 +31,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Use Memory Storage for Bookshelf
+memory_db = {
+    "Padi_Bookshelf": []
+    }
+# for default bookshelf
+
+default_bookshelf = "Padi_Bookshelf"
+
+# get padi default bookshelf
+app.get("/bookshelf", response_model=Bookshelf)
+def get_bookshelf():
+    return Bookshelf(books=memory_db[default_bookshelf])
