@@ -16,6 +16,7 @@ const BookList = () => {
 
   const addBook = async (book) => {
     try {
+      console.log("送出的 book：", book);
       await api.post("/book", book);
       fetchBooks();
     } catch (error) {
@@ -35,7 +36,7 @@ const BookList = () => {
           <li key={index}>{book.title}</li>
         ))}
       </ul>
-      <AddBookForm addBook={addBook} />
+      <AddBookForm onAddBook={addBook} />
     </div>
   );
 };
