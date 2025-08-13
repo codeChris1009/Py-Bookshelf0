@@ -1,42 +1,155 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Neon split layout and background */
+.app-neon-bg {
+  min-height: 100vh;
+  background: #0a001a;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.neon-split-container {
+  display: flex;
+  flex: 1;
+  height: 80vh;
+  margin: 40px 0 0 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.neon-list-panel,
+.neon-form-panel {
+  flex: 1;
+  padding: 40px 30px;
+  background: rgba(10, 0, 26, 0.85);
+  box-shadow: 0 0 30px #b56aff33, 0 0 60px #6df2ff22;
+  border-radius: 24px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.neon-title {
+  color: #b56aff;
+  text-shadow: 0 0 8px #b56aff, 0 0 16px #6df2ff;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+body,
+.App {
+  background: #0a001a;
+}
+/* Nebula Input Style for AddBookForm */
+.nebula-input {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.nebula-input .input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 10px;
+  min-width: 0;
+  border: 2px solid #2a2a3a;
+  background: #00000f;
+  color: white;
+  outline: none;
+  border-radius: 8px;
+  transition: all 0.4s ease-out;
+}
+
+.nebula-input .user-label {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  pointer-events: none;
+  color: #6a6a8a;
+  transition: all 0.4s ease-out;
+  background: #00000f;
+  padding: 0 5px;
+}
+
+.nebula-input .input:focus {
+  border-color: #b56aff;
+  box-shadow: 0 5px 8px rgba(181, 106, 255, 0.3),
+    0 10px 20px rgba(181, 106, 255, 0.2), 0 15px 40px rgba(181, 106, 255, 0.15),
+    0 20px 60px rgba(181, 106, 255, 0.1);
+}
+
+.nebula-input .input:focus ~ .user-label,
+.nebula-input .input:valid ~ .user-label {
+  transform: translateY(-30px);
+  font-size: 12px;
+  color: #d18cff;
+  left: 10px;
+}
+
+.nebula-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  top: 50%;
+  left: 10px;
+  filter: blur(0.8px);
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+.nebula-input .input:focus ~ .nebula-particle {
+  animation: nebula-float 2s forwards ease-out;
+}
+
+@keyframes nebula-float {
+  0% {
+    transform: translate(0, -50%) scale(0.8);
+    opacity: 0;
+    background: #c774ff;
   }
-  to {
-    transform: rotate(360deg);
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(calc(var(--x) * 140px), calc(var(--y) * 35px))
+      scale(1.1);
+    opacity: 0;
+    background: #6df2ff;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.container {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .card {
-  padding: 2em;
+  width: 370px;
+  min-height: 400px;
+  background-color: #0a001a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 30px #b56aff33, 0 0 60px #6df2ff22;
+  padding: 2rem 1.2rem 2rem 1.2rem;
+  box-sizing: border-box;
 }
 
-.read-the-docs {
-  color: #888;
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-row .nebula-input {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 150px;
 }
