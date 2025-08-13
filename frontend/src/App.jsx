@@ -34,6 +34,7 @@ const App = () => {
     <div className="app-neon-bg">
       <header className="App-header">
         <h1
+          className="bookshelf-title"
           style={{
             color: "#d18cff",
             textShadow: "0 0 10px #b56aff, 0 0 20px #6df2ff",
@@ -42,13 +43,13 @@ const App = () => {
           BookShelf
         </h1>
       </header>
-      <div className="container">
-        <div className="card">
-          <h2 className="title">書籍清單</h2>
+      <div className="layout">
+        <div className="card booklist-scroll">
+          <h2 className="title_card">書籍清單</h2>
           <BookList books={books} />
         </div>
         <div className="card">
-          <h2 className="title">新增書籍</h2>
+          <h2 className="title_card">新增書籍</h2>
           <AddBookForm onAddBook={addBook} />
         </div>
       </div>

@@ -38,7 +38,12 @@
 body,
 .App {
   background: #0a001a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
 }
+
 /* Nebula Input Style for AddBookForm */
 .nebula-input {
   position: relative;
@@ -47,7 +52,7 @@ body,
 }
 
 .nebula-input .input {
-  width: 100%;
+  width: 95%;
   box-sizing: border-box;
   font-size: 14px;
   padding: 10px;
@@ -122,15 +127,16 @@ body,
 }
 
 .container {
-  margin: 40px auto;
+  margin: 0 auto;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
 }
 
 .card {
-  width: 370px;
+  width: 400px;
   min-height: 400px;
   background-color: #0a001a;
   display: flex;
@@ -138,18 +144,160 @@ body,
   align-items: center;
   border-radius: 0.5rem;
   box-shadow: 0 0 30px #b56aff33, 0 0 60px #6df2ff22;
-  padding: 2rem 1.2rem 2rem 1.2rem;
+  padding: 0.8rem 1rem 1rem 1.2rem;
+  margin: 20px;
   box-sizing: border-box;
+}
+
+.bookshelf-title,
+.bookshelf-title h1,
+.bookshelf-title h2 {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.title_card {
+  color: #8d5bbe;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .form-row {
   display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+  flex-direction: row;
+  gap: 0;
+  margin-bottom: 8px;
 }
 
-.form-row .nebula-input {
+.flex-1 {
   flex: 1 1 0;
   min-width: 0;
-  max-width: 150px;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Book Card Notification Style */
+.notification.book-card {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 18rem;
+  min-height: 8rem;
+  background: #0a001a;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #7e61ff, #d83dff, #cb2eff);
+  --color: #7e61ff;
+  margin: 0 auto;
+}
+
+.notification.book-card:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #0a001a;
+  z-index: 2;
+}
+
+.notification.book-card:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.notification.book-card:hover:after {
+  transform: translateX(0.15rem);
+}
+
+.notititle {
+  color: var(--color);
+  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.notification.book-card:hover .notititle {
+  transform: translateX(0.15rem);
+}
+
+.notibody {
+  color: #dcdcee;
+  padding: 0 1.25rem 0.5rem 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.notification.book-card:hover .notibody {
+  transform: translateX(0.25rem);
+}
+
+.notiglow,
+.notiborderglow {
+  position: absolute;
+  width: 45rem;
+  height: 45rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle closest-side at center,
+    white,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow {
+  z-index: 3;
+}
+
+.notiborderglow {
+  z-index: 1;
+}
+
+.notification.book-card:hover .notiglow {
+  opacity: 0.1;
+}
+
+.notification.book-card:hover .notiborderglow {
+  opacity: 0.1;
+}
+
+.card.booklist-scroll {
+  max-height: 630px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ae43ec #18181b;
+}
+
+.card.booklist-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card.booklist-scroll::-webkit-scrollbar-thumb {
+  background: #32a6ff;
+  border-radius: 4px;
+}
+
+.card.booklist-scroll::-webkit-scrollbar-track {
+  background: #18181b;
+  border-radius: 4px;
 }
