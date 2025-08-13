@@ -409,3 +409,23 @@ body,
 #star5:checked ~ label > svg {
   fill: #831dff;
 }
+
+.button {
+  width: 94%;
+  display: block;
+  margin: 8px auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #e81cff, #a928ff);
+  box-shadow: 3px 3px 10px #a928ff, -3px -3px 10px #e81cff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(145deg, #a928ff, #e81cff);
+  box-shadow: 5px 5px 10px #e81cff, -5px -5px 10px #a928ff;
+}
