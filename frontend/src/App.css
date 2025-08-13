@@ -56,6 +56,7 @@ body,
   box-sizing: border-box;
   font-size: 14px;
   padding: 10px;
+  margin-bottom: 8px;
   min-width: 0;
   border: 2px solid #2a2a3a;
   background: #00000f;
@@ -169,7 +170,6 @@ body,
   display: flex;
   flex-direction: row;
   gap: 0;
-  margin-bottom: 8px;
 }
 
 .flex-1 {
@@ -349,4 +349,63 @@ body,
 
 .checkbox__label:hover .checkbox__custom {
   transform: scale(1.2);
+}
+
+/* Star Rating Styles */
+.rating > label {
+  margin-right: 2px;
+}
+.rating:not(:checked) > input {
+  display: none;
+}
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 24px;
+}
+.rating:not(:checked) > label > svg {
+  fill: #b8b8b8;
+  transition: fill 0.3s ease;
+}
+.rating > input:checked ~ label > svg {
+  fill: #ded2ff;
+}
+.rating:not(:checked) > label:hover ~ label > svg,
+.rating:not(:checked) > label:hover > svg {
+  fill: #ded2ff;
+}
+#star1:hover ~ label > svg,
+#star1:hover > svg {
+  fill: #ded2ff !important;
+}
+#star2:hover ~ label > svg,
+#star2:hover > svg {
+  fill: #c7aeff !important;
+}
+#star3:hover ~ label > svg,
+#star3:hover > svg {
+  fill: #ab80ff !important;
+}
+#star4:hover ~ label > svg,
+#star4:hover > svg {
+  fill: #944dff !important;
+}
+#star5:hover ~ label > svg,
+#star5:hover > svg {
+  fill: #831dff !important;
+}
+#star1:checked ~ label > svg {
+  fill: #ded2ff;
+}
+#star2:checked ~ label > svg {
+  fill: #c7aeff;
+}
+#star3:checked ~ label > svg {
+  fill: #ab80ff;
+}
+#star4:checked ~ label > svg {
+  fill: #944dff;
+}
+#star5:checked ~ label > svg {
+  fill: #831dff;
 }

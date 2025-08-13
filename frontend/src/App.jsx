@@ -40,16 +40,16 @@ const App = () => {
             textShadow: "0 0 10px #b56aff, 0 0 20px #6df2ff",
           }}
         >
-          BookShelf
+          {"BookShelf".toUpperCase()}
         </h1>
       </header>
       <div className="layout">
         <div className="card booklist-scroll">
-          <h2 className="title_card">Bookshelf List</h2>
+          <h2 className="title_card">{"Bookshelf List".toUpperCase()}</h2>
           <BookList books={books} />
         </div>
         <div className="card">
-          <h2 className="title_card">Add Bookshelf</h2>
+          <h2 className="title_card">{"Add Bookshelf".toUpperCase()}</h2>
           <AddBookForm onAddBook={addBook} />
         </div>
       </div>
