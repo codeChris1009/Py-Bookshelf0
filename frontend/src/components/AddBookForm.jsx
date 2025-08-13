@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 
 const initialBook = {
   isbn: "",
@@ -335,27 +336,20 @@ const AddBookForm = ({ onAddBook }) => {
         </div>
       </div>
       <div className="form-row" style={{ alignItems: "center" }}>
-        <div
-          className="nebula-input"
-          style={{
-            flex: 1,
-            background: "transparent",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <label
-            style={{ color: "#fff", marginRight: "10px", minWidth: "60px" }}
-          >
-            Read:
-          </label>
+        {/* isRead checkbox 欄位 */}
+        <div className="checkbox">
           <input
+            id="isRead"
+            className="checkbox__input"
             name="isRead"
             type="checkbox"
             checked={book.isRead}
             onChange={handleChange}
-            style={{ marginLeft: "10px", width: "20px", height: "20px" }}
           />
+          <label htmlFor="isRead" className="checkbox__label">
+            <span className="checkbox__custom" />
+            Is Reading ?
+          </label>
         </div>
       </div>
       <button type="submit">Add Book</button>

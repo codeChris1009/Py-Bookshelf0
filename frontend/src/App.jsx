@@ -45,11 +45,11 @@ const App = () => {
       </header>
       <div className="layout">
         <div className="card booklist-scroll">
-          <h2 className="title_card">書籍清單</h2>
+          <h2 className="title_card">Bookshelf List</h2>
           <BookList books={books} />
         </div>
         <div className="card">
-          <h2 className="title_card">新增書籍</h2>
+          <h2 className="title_card">Add Bookshelf</h2>
           <AddBookForm onAddBook={addBook} />
         </div>
       </div>
