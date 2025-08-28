@@ -22,8 +22,10 @@ class Bookshelf(BaseModel):
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173"
-    ]
+    "http://localhost:5173",  # 本地開發
+    "https://codeChris1009.github.io",  # GitHub Pages 主網域
+    "https://codeChris1009.github.io/Py-Bookshelf0",  # 你的專案頁面
+]
 
 app.add_middleware(
     CORSMiddleware,
