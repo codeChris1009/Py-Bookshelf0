@@ -67,24 +67,26 @@
 
 ## Directory Structure 目錄結構
 
+```text
 AdvImplement/
 ├── backend/
-│ ├── main.py # FastAPI 主程式
-│ ├── requirements.txt # Python 套件需求
-│ └── ... # 其他後端檔案
+│   ├── main.py                # FastAPI 主程式
+│   ├── requirements.txt       # Python 套件需求
+│   └── ...                    # 其他後端檔案
 ├── frontend/
-│ ├── src/
-│ │ ├── App.jsx # React 主程式
-│ │ ├── App.css # 霓虹/卡片/動畫樣式
-│ │ ├── api.js # Axios API 設定
-│ │ └── components/
-│ │ ├── AddBookForm.jsx # 書籍表單 (動畫/自訂 UI)
-│ │ ├── Book.jsx # 書籍卡片列表
-│ │ ├── ButtonStyled.jsx # 動畫按鈕 (styled-components)
-│ │ └── YearSelect.jsx # 橫向年份選擇器
-│ ├── index.html # 標題、favicon
-│ └── package.json # 前端相依套件
-└── ... # 其他專案檔案
+│   ├── src/
+│   │   ├── App.jsx               # React 主程式
+│   │   ├── App.css               # 霓虹/卡片/動畫樣式
+│   │   ├── api.js                # Axios API 設定
+│   │   └── components/
+│   │       ├── AddBookForm.jsx      # 書籍表單 (動畫/自訂 UI)
+│   │       ├── Book.jsx             # 書籍卡片列表
+│   │       ├── ButtonStyled.jsx     # 動畫按鈕 (styled-components)
+│   │       └── YearSelect.jsx       # 橫向年份選擇器
+│   ├── index.html               # 標題、favicon
+│   └── package.json             # 前端相依套件
+└── ...                        # 其他專案檔案
+```
 
 ---
 
