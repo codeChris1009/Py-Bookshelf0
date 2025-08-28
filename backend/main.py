@@ -1,3 +1,4 @@
+from datetime import date
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -36,6 +37,13 @@ app.add_middleware(
 memory_db = {
     "Padi_Bookshelf": []
     }
+
+# Welcome Message
+@app.get("/")
+def welcome_message():
+    today = date.today()
+    week = today.strftime("%A")
+    return {"welcomeMessage": f"{week}, Happy Book, Code, Cookie With Padi~"}
 
 
 # get padi default bookshelf
