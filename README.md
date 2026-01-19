@@ -7,11 +7,11 @@
 現代化、優雅的書架管理系統
 </br>
 採用 FastAPI 後端與 React (Vite) 前端
-<br>
-FRONTEND VIEW PREVIEW
-<br>
+</br>
+_**FRONTEND VIEW PREVIEW**_
+</br>
 https://codechris1009.github.io/Py-Bookshelf0/
-<br>
+</br>
 
 ---
 
