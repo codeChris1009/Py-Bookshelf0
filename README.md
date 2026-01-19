@@ -12,7 +12,6 @@
 
 **VIEW PREVIEW**
 </br>
-- **Backend**: Deploy to [Render](https://render.com/)
 [FRONTEND](https://codechris1009.github.io/Py-Bookshelf0/) (github page)
 </br>
 
