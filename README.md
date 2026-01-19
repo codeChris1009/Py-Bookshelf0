@@ -8,9 +8,9 @@
 </br>
 採用 FastAPI 後端與 React (Vite) 前端
 </br>
->_FRONTEND VIEW PREVIEW_
+**FRONTEND VIEW PREVIEW**
 </br>
-https://codechris1009.github.io/Py-Bookshelf0/
+> https://codechris1009.github.io/Py-Bookshelf0/
 </br>
 
 ---
